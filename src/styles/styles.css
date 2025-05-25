@@ -1,22 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
 * {
+  font-family: "montserrat", sans-serif;
   margin: 0;
   padding: 0;
-
   box-sizing: border-box;
 }
 
+/* scroll bar */
+html::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #a9d3ba;
+}
+
+html,
 body {
-  font-family: "Arial", sans-serif;
+  background-color: #f9f1e3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
   padding-inline: 32px;
   margin-inline: auto;
   max-width: 1300px;
+
+  height: 1000px;
 }
 
 header {
-  background-color: lightskyblue;
+  background-color: #ebf5ec;
 }
 
 .main-header {
@@ -98,7 +119,35 @@ header {
   padding-block: 20px;
 }
 
-/* Write your styles more here */
+/* Footer Styles */
+.footer {
+  background-color: #8e541e;
+  color: #f9f1e3;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer span {
+  font-weight: bold;
+  color: #fddfaf;
+}
+
+.footer a {
+  color: #fddfaf;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #fdd18b;
+  text-decoration: underline;
+}
 
 @media screen and (width > 1000px) {
   .navigation-drawer {
