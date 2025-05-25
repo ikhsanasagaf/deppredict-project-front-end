@@ -6,17 +6,40 @@
     <title>DepPredict</title>
   </head>
   <body>
+    <div id="loading-spinner" class="loading-spinner">
+      <div class="spinner"></div>
+    </div>
     <header>
-      <app-bar></app-bar>
-    </header>
-    <main>
-      <div id="app">
-        <h1>Selamat Datang di DepPredict!</h1>
-        <p>Website untuk prediksi depresi.</p>
+      <!-- <button id="skip-link" class="skip-link">Skip to Content</button> -->
+      <div class="main-header container">
+        <div class="icon">
+          <a class="brand-name" href="#/"
+            ><i class="fas fa-book-reader"></i>DepPredict</a
+          >
+        </div>
+        <nav id="navigation-drawer" class="navigation-drawer">
+          <ul id="nav-list" class="nav-list">
+            <li><a href="#/">Home</a></li>
+            <!-- <li><a href="#/add-stories">Add Story</a></li>
+            <li><a href="#/bookmark">Bookmarked Stories</a></li> -->
+            <li><a href="#/about">About</a></li>
+            <li><button id="auth-button" class="auth-button">Login</button></li>
+          </ul>
+        </nav>
+
+        <button id="drawer-button" class="drawer-button">☰</button>
       </div>
-    </main>
+    </header>
+
+    <main id="main-content" class="main-content"></main>
+
     <footer>
       <p>&copy; 2025 DepPredict - Ikhsan and others</p>
     </footer>
   </body>
+  <!-- Font Awesome -->
+  <script
+    src="https://kit.fontawesome.com/eff3ff321f.js"
+    crossorigin="anonymous"
+  ></script>
 </html>
