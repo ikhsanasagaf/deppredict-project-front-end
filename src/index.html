@@ -3,43 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DepPredict</title>
+    <title>DepPredict - Prediksi Sekarang!</title>
+    <link rel="icon" type="image/png" href="/healthy.png" />
   </head>
   <body>
-    <div id="loading-spinner" class="loading-spinner">
-      <div class="spinner"></div>
+    <div class="bg-loader">
+      <div class="loader"></div>
     </div>
-    <header>
-      <!-- <button id="skip-link" class="skip-link">Skip to Content</button> -->
-      <div class="main-header container">
-        <div class="icon">
-          <a class="brand-name" href="#/">DepPredict</a>
-        </div>
-        <nav id="navigation-drawer" class="navigation-drawer">
-          <ul id="nav-list" class="nav-list">
-            <li><a href="#/">Home</a></li>
-            <!-- <li><a href="#/add-stories">Add Story</a></li>
-            <li><a href="#/bookmark">Bookmarked Stories</a></li> -->
-            <li><a href="#/about">About</a></li>
-            <li><button id="auth-button" class="auth-button">Login</button></li>
-          </ul>
-        </nav>
 
-        <button id="drawer-button" class="drawer-button">☰</button>
-      </div>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-light shadow-sm fixed-top"
+        style="background-color: #ebf5ec"
+      >
+        <div class="container">
+          <a class="navbar-brand fw-bold fs-4" href="#/">
+            <span style="color: #104f1f">Dep</span><span
+              style="color: #6ebe77"
+              >Predict</span
+            >
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+              <li class="nav-item">
+                <a class="nav-link fs-6" href="#/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-6" href="#/about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-6" href="#/predict">Predict</a>
+              </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
-    <main id="main-content" class="main-content"></main>
+    <main id="main-content" class="main-content" style="padding-top: 70px;">
+      </main>
 
-    <footer class="footer">
+    <footer class="footer bg-dark p-3 mt-auto">
       <div class="container">
-        <p>&copy; <span id="footer-year"></span>StoryApp by Ikhsan Asagaf</p>
+        <div class="row text-light">
+          <div
+            class="col-md-6 text-center text-md-start mb-2 mb-md-0"
+            style="color: #d3ffdc"
+          >
+            &copy; Copyright 2025 | DepPredict. All
+            Rights Reserved
+          </div>
+          <div class="col-md-6 text-center text-md-end" style="color: #d3ffdc">
+            Created by CC25-CF325
+          </div>
+        </div>
       </div>
     </footer>
   </body>
-  <!-- Font Awesome -->
-  <script
-    src="https://kit.fontawesome.com/eff3ff321f.js"
-    crossorigin="anonymous"
-  ></script>
 </html>
