@@ -1,14 +1,13 @@
-import AboutPresenter from './about-presenter';
+import AboutPresenter from "./about-presenter";
 
 class AboutPage {
   constructor() {
     this._presenter = null;
-    
-    this._aboutImageUrl = '/anxiety.png';
+
+    this._aboutImageUrl = "/anxiety.png";
     this._presenterName = "CC25-CF325";
   }
 
-  
   async render() {
     return `
       <div id="about-page-content-area" class="about-page-content-area">
@@ -17,9 +16,11 @@ class AboutPage {
   }
 
   async afterRender() {
-    const aboutContentAreaElement = document.querySelector('#about-page-content-area');
+    const aboutContentAreaElement = document.querySelector(
+      "#about-page-content-area"
+    );
     if (!aboutContentAreaElement) {
-      console.error('Elemen #about-page-content-area tidak ditemukan!');
+      console.error("Elemen #about-page-content-area tidak ditemukan!");
       return;
     }
 
@@ -47,10 +48,10 @@ class AboutPage {
           </div>
           <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 text-center mb-4 mb-lg-0">
-              <img src="${this._aboutImageUrl}" alt="Ilustrasi kecemasan atau depresi" class="img-fluid" style="max-width: 60%; height: auto; border-radius: 25px;">
+              <img src="${this._aboutImageUrl}" alt="Ilustrasi kecemasan atau depresi" class="img-fluid" style="max-width: 70%; height: auto; border-radius: 25px;">
             </div>
             <div class="col-lg-6 col-md-12">
-              <div class="about-text" style="color: #104f1f; font-size: 1.1rem; line-height: 1.7;">
+              <div class="about-text px-2 px-sm-0 text-center text-lg-start" style="color: #104f1f; line-height: 1.6;" style="color: #104f1f;">
                 <p>
                   DepPredict dibuat dengan sepenuh hati oleh kami untuk Project Capstone pada Coding Camp. Kami membuat website ini karena pada zaman sekarang marak sekali anak muda yang mengidap depresi.
                 </p>
@@ -63,7 +64,7 @@ class AboutPage {
         </div>
       </div>
 
-      <div class="container py-5 mb-4" id="about-presenter-section">
+      <div class="container py-5 mb-4 mt-5" id="about-presenter-section">
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="card p-3 p-md-4 shadow-sm">
@@ -77,66 +78,101 @@ class AboutPage {
           </div>
         </div>
       </div>
-       <div class="row text-center">
-    <div class="col-md-4 mb-4">
-      <div class="card border-0 shadow-sm h-100">
-        <div class="card-body">
-          <img src="/avatar1.png" alt="Anggota 1" class="rounded-circle mb-3" width="100" height="100">
-          <h5 class="card-title mb-1">Sofyan Pahlevi</h5>
-          <p class="text-muted small">Machine Learning</p>
+
+      <div class="container py-5">
+        <div class="row mb-5">
+            <div class="col text-center">
+            <h2 class="fw-bold display-6" style="color: #104f1f;">Tim Kami</h2>
+            <p class="text-muted">Orang-orang hebat di balik DepPredict</p>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="card border-0 shadow-sm h-100">
-        <div class="card-body">
-          <img src="/avatar2.png" alt="Anggota 2" class="rounded-circle mb-3" width="100" height="100">
-          <h5 class="card-title mb-1">Satria Dirgantara Nuryaman</h5>
-          <p class="text-muted small">Machine Learning</p>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="card team-card text-center border-0 shadow-sm h-100 w-100">
+                <div class="card-body d-flex flex-column">
+                <img src="/avatar1.png" alt="Sofyan Pahlevi" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
+                <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Sofyan Pahlevi</h5>
+                <p class="text-muted small mb-3">Machine Learning</p>
+                <div class="mt-auto">
+                    <a href="#" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="card team-card text-center border-0 shadow-sm h-100 w-100">
+                <div class="card-body d-flex flex-column">
+                <img src="/avatar2.png" alt="Satria Dirgantara" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
+                <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Satria Dirgantara</h5>
+                <p class="text-muted small mb-3">Machine Learning</p>
+                <div class="mt-auto">
+                    <a href="#" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="card team-card text-center border-0 shadow-sm h-100 w-100">
+                <div class="card-body d-flex flex-column">
+                <img src="/avatar3.png" alt="Tasya Panggabean" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
+                <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Tasya Panggabean</h5>
+                <p class="text-muted small mb-3">Machine Learning</p>
+                <div class="mt-auto">
+                    <a href="#" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="card border-0 shadow-sm h-100">
-        <div class="card-body">
-          <img src="/avatar3.png" alt="Anggota 3" class="rounded-circle mb-3" width="100" height="100">
-          <h5 class="card-title mb-1">Tasya Panggabean</h5>
-          <p class="text-muted small">Machine Learning</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row text-center">
-    <div class="col-md-4 mb-4">
-      <div class="card border-0 shadow-sm h-100">
-        <div class="card-body">
-          <img src="/avatar1.png" alt="Anggota 1" class="rounded-circle mb-3" width="100" height="100">
-          <h5 class="card-title mb-1">Muhammad Ikhsan Asagaf</h5>
-          <p class="text-muted small">Front end Back-End Developer</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="card border-0 shadow-sm h-100">
-        <div class="card-body">
-          <img src="/avatar2.png" alt="Anggota 2" class="rounded-circle mb-3" width="100" height="100">
-          <h5 class="card-title mb-1"> Lay Victor Adrian</h5>
-          <p class="text-muted small">Front end Back-End Developer</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4">
-      <div class="card border-0 shadow-sm h-100">
-        <div class="card-body">
-          <img src="/avatar3.png" alt="Anggota 3" class="rounded-circle mb-3" width="100" height="100">
-          <h5 class="card-title mb-1">Y Noven Dhimas Nugroho</h5>
-          <p class="text-muted small">Front end Back-End Developer</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="card team-card text-center border-0 shadow-sm h-100 w-100">
+                <div class="card-body d-flex flex-column">
+                <img src="/avatar-ikhsan.png" alt="Muhammad Ikhsan Asagaf" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
+                <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Ikhsan Asagaf</h5>
+                <p class="text-muted small mb-3">Front-end & Back-End Developer</p>
+                <div class="mt-auto">
+                    <a href="https://github.com/ikhsanasagaf" target="_blank" rel="noopener noreferrer" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ikhsan-asagaf/" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="card team-card text-center border-0 shadow-sm h-100 w-100">
+                <div class="card-body d-flex flex-column">
+                <img src="/avatar2.png" alt="Lay Victor Adrian" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
+                <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Lay Victor Adrian</h5>
+                <p class="text-muted small mb-3">Front-end & Back-End Developer</p>
+                <div class="mt-auto">
+                    <a href="#" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="card team-card text-center border-0 shadow-sm h-100 w-100">
+                <div class="card-body d-flex flex-column">
+                    <img src="/avatar3.png" alt="Y Noven Dhimas Nugroho" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
+                    <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Y Noven Dhimas Nugroho</h5>
+                    <p class="text-muted small mb-3">Front-end & Back-End Developer</p>
+                    <div class="mt-auto">
+                        <a href="#" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            </div>
     `;
   }
 
@@ -144,7 +180,9 @@ class AboutPage {
     if (containerElement) {
       containerElement.innerHTML = this._getAboutContentTemplate();
     } else {
-      console.error('Container element untuk AboutPage tidak ditemukan oleh View.');
+      console.error(
+        "Container element untuk AboutPage tidak ditemukan oleh View."
+      );
     }
   }
 }

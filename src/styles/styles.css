@@ -72,4 +72,45 @@ body {
   color: #104f1f; /* */
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.team-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: #f8f9fa;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.team-card .card-body {
+  padding: 1.5rem;
+}
+
+.team-card .card-title {
+  font-size: 1.15rem;
+}
+
+.team-card .text-muted {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.team-card .fab {
+  font-size: 1.25rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.team-card a:hover .fab.fa-github { color: #333 !important; }
+.team-card a:hover .fab.fa-linkedin { color: #0077b5 !important; }
+.team-card a:hover .fab.fa-twitter { color: #1da1f2 !important; }
+
+.team-card img.rounded-circle {
+  position: relative;
+  z-index: 1;
+}
 

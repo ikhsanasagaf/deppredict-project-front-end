@@ -6,9 +6,12 @@ export default class HomePage {
   async render() {
     return `
       <!-- Hero Section -->
-      <section class="hero-section py-5" style="background-color: #ebf5ec;">
-        <div class="container text-center">
-          <h1 class="display-5 fw-bold" style="color: #104f1f;">Selamat Datang di DepPredict</h1>
+      <section class="hero-section py-5">
+        <div class="container text-center p-5">
+          <h1 class="display-5 fw-bold" style="color: #104f1f;">Selamat Datang di <span style="color: #104f1f">Dep</span><span
+              style="color: #6ebe77"
+              >Predict</span
+            ></h1>
           <p class="lead" style="color: #4d7f5e;">
             DepPredict membantu Anda mendeteksi dini gejala depresi lebih awal.
           </p>
@@ -19,8 +22,8 @@ export default class HomePage {
       </section>
 
       <!-- Fitur Utama -->
-      <section class="features-section py-5">
-        <div class="container">
+      <section class="features-section py-5" style="background-color: #f8fdf9;">
+        <div class="container mt-5 mb-5">
           <div class="row text-center">
             <div class="col-md-4 mb-4">
               <img src="/healthy.png" alt="Sehat" class="img-fluid mb-3" style="max-height: 100px;">
@@ -42,13 +45,13 @@ export default class HomePage {
       </section>
 
       <!-- Kenapa Deteksi Dini Penting -->
-      <section class="py-5" style="background-color: #f8fdf9;">
+      <section class="py-5">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6 mb-4 mb-md-0">
               <img src="/stress.png" alt="Deteksi Dini" class="img-fluid rounded" />
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 px-2 px-sm-0 text-center text-lg-start">
               <h3 class="fw-bold mb-3" style="color: #104f1f;">Kenapa Deteksi Dini Itu Penting?</h3>
               <p style="color: #4d7f5e;">Deteksi dini membantu mencegah dampak jangka panjang dari depresi. Dengan mengenali tanda-tanda awal, kita bisa mengambil langkah cepat untuk mendapatkan bantuan dan pemulihan lebih cepat.</p>
               <p style="color: #4d7f5e;">DepPredict hadir sebagai solusi untuk menyadarkan masyarakat akan pentingnya kesehatan mental sejak dini.</p>
