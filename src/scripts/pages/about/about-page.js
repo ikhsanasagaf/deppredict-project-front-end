@@ -77,6 +77,66 @@ class AboutPage {
           </div>
         </div>
       </div>
+       <div class="row text-center">
+    <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body">
+          <img src="/avatar1.png" alt="Anggota 1" class="rounded-circle mb-3" width="100" height="100">
+          <h5 class="card-title mb-1">Sofyan Pahlevi</h5>
+          <p class="text-muted small">Machine Learning</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body">
+          <img src="/avatar2.png" alt="Anggota 2" class="rounded-circle mb-3" width="100" height="100">
+          <h5 class="card-title mb-1">Satria Dirgantara Nuryaman</h5>
+          <p class="text-muted small">Machine Learning</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body">
+          <img src="/avatar3.png" alt="Anggota 3" class="rounded-circle mb-3" width="100" height="100">
+          <h5 class="card-title mb-1">Tasya Panggabean</h5>
+          <p class="text-muted small">Machine Learning</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row text-center">
+    <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body">
+          <img src="/avatar1.png" alt="Anggota 1" class="rounded-circle mb-3" width="100" height="100">
+          <h5 class="card-title mb-1">Muhammad Ikhsan Asagaf</h5>
+          <p class="text-muted small">Front end Back-End Developer</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body">
+          <img src="/avatar2.png" alt="Anggota 2" class="rounded-circle mb-3" width="100" height="100">
+          <h5 class="card-title mb-1"> Lay Victor Adrian</h5>
+          <p class="text-muted small">Front end Back-End Developer</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body">
+          <img src="/avatar3.png" alt="Anggota 3" class="rounded-circle mb-3" width="100" height="100">
+          <h5 class="card-title mb-1">Y Noven Dhimas Nugroho</h5>
+          <p class="text-muted small">Front end Back-End Developer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     `;
   }
 
