@@ -51,7 +51,7 @@ class AboutPage {
               <img src="${this._aboutImageUrl}" alt="Ilustrasi kecemasan atau depresi" class="img-fluid" style="max-width: 70%; height: auto; border-radius: 25px;">
             </div>
             <div class="col-lg-6 col-md-12">
-              <div class="about-text px-2 px-sm-0 text-center text-lg-start" style="color: #104f1f; line-height: 1.6;" style="color: #104f1f;">
+              <div class="about-text px-2 px-sm-0 text-center text-lg-start" style="color: #104f1f; line-height: 1.6; font-size: 1.05rem;">
                 <p>
                   DepPredict dibuat dengan sepenuh hati oleh kami untuk Project Capstone pada Coding Camp. Kami membuat website ini karena pada zaman sekarang marak sekali anak muda yang mengidap depresi.
                 </p>

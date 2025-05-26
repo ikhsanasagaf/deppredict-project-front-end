@@ -51,7 +51,7 @@ export default class HomePage {
             <div class="col-md-6 mb-4 mb-md-0">
               <img src="/stress.png" alt="Deteksi Dini" class="img-fluid rounded" />
             </div>
-            <div class="col-md-6 px-2 px-sm-0 text-center text-lg-start">
+            <div class="col-md-6 px-2 px-sm-0 text-center text-lg-start" style="font-size: 1.1rem;">
               <h3 class="fw-bold mb-3" style="color: #104f1f;">Kenapa Deteksi Dini Itu Penting?</h3>
               <p style="color: #4d7f5e;">Deteksi dini membantu mencegah dampak jangka panjang dari depresi. Dengan mengenali tanda-tanda awal, kita bisa mengambil langkah cepat untuk mendapatkan bantuan dan pemulihan lebih cepat.</p>
               <p style="color: #4d7f5e;">DepPredict hadir sebagai solusi untuk menyadarkan masyarakat akan pentingnya kesehatan mental sejak dini.</p>
