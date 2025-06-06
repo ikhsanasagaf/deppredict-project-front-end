@@ -15,7 +15,7 @@ export default class HomePage {
           <p class="lead" style="color: #4d7f5e;">
             DepPredict membantu Anda mendeteksi dini gejala depresi lebih awal.
           </p>
-          <a href="#/predict" class="btn btn-success mt-3 px-4 py-2">
+          <a href="#/predict" class="btn btn-light mt-3 px-4 py-2 fw-bold">
             Mulai Prediksi
           </a>
         </div>
@@ -65,7 +65,6 @@ export default class HomePage {
         <div class="container">
           <h4 class="fw-bold mb-3">Yuk, Cek Kondisi Mentalmu Sekarang</h4>
           <p class="mb-4">Jangan tunda lagi. Prediksi sekarang dan dapatkan pemahaman awal tentang kondisi mentalmu.</p>
-          <a href="#/predict" class="btn btn-light fw-bold px-4 py-2">Mulai Sekarang</a>
         </div>
       </section>
     `;

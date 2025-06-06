@@ -1,0 +1,79 @@
+.login-page-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 65px); 
+}
+
+.login-illustration-side {
+  background-image: url('/src/public/bg.png'); 
+  background-size: cover;
+  background-position: center center;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-illustration-side img {
+  width: 100%;
+  max-width: 450px;
+}
+
+.login-form-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.login-box {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-box .title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #104f1f;
+}
+
+.login-box .separator {
+  width: 100px;
+  height: 4px;
+  background-color: #6ebe77;
+  margin: 1.5rem auto;
+}
+
+.login-box .welcome-message {
+  color: #4d7f5e;
+  margin-bottom: 2rem;
+}
+
+.login-form .input-group-text {
+  background-color: #e9ecef;
+  border-right: 0;
+}
+
+.login-form .form-control {
+  border-left: 0;
+}
+
+.login-form .form-control:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+/* Menghilangkan kolom ilustrasi di layar kecil */
+@media (max-width: 992px) {
+  .login-page-container {
+    grid-template-columns: 1fr;
+  }
+  .login-illustration-side {
+    display: none;
+  }
+  .login-form-side {
+    min-height: calc(100vh - 65px);
+  }
+}

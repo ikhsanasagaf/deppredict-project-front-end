@@ -1,8 +1,8 @@
-// CSS imports
-import "../styles/styles.css";
 // Bootstrap imports
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+// CSS imports
+import "../styles/styles.css";
 
 import App from "./pages/app";
 
