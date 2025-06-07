@@ -104,8 +104,8 @@ class PredictPage {
                           </select>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <div class="col-md-6">
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-3 mb-md-0">
                         <label for="fam" class="form-label">Apakah ada keluarga kamu yang memiliki penyakit mental?</label>
                         <select class="form-select" id="fam" name="fam" required>
                             <option selected disabled value="">Pilih Ya/Tidak</option>
@@ -113,7 +113,7 @@ class PredictPage {
                             <option value="0">Tidak</option>
                         </select>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <label for="sui" class="form-label">Pernahkah kamu memiliki keinginan bunuh diri?</label>
                         <select class="form-select" id="sui" name="sui" required>
                             <option selected disabled value="">Pilih Ya/Tidak</option>
@@ -122,11 +122,11 @@ class PredictPage {
                         </select>
                     </div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center mt-4">
-                    <button type="submit" name="hitung" class="btn btn-light fw-bold">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-4">
+                    <button type="submit" name="hitung" class="btn btn-success fw-bold">
                         <i class="fa-solid fa-laptop-medical" style="margin-right:10px;"></i>Prediksi
                     </button>
-                    <a href="#/" class="btn btn-light" style="font-weight:600;"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i>
+                    <a href="#/" class="btn btn-success" style="font-weight:600;"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i>
                         Kembali
                     </a>
                 </div>

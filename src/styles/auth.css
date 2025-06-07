@@ -77,3 +77,13 @@
     min-height: calc(100vh - 65px);
   }
 }
+
+.login-box p a {
+  color: #104f1f; 
+  text-decoration: none; 
+  font-weight: 600; 
+}
+
+.login-box p a:hover {
+  text-decoration: underline;
+}

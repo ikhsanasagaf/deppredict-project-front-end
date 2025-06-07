@@ -1,6 +1,6 @@
 import LoginPresenter from "./login-presenter.js";
 import Swal from "sweetalert2";
-import "../../../../styles/login.css";
+import "../../../../styles/auth.css";
 
 export default class LoginPage {
   #presenter = null;
@@ -31,6 +31,9 @@ export default class LoginPage {
 
               <button type="submit" class="btn btn-success w-100 fw-bold auth-form__button">MASUK</button>
             </form>
+            <p class="mt-3">
+              Belum punya akun? <a href="#/register">Daftar disini</a>
+            </p>
           </div>
         </section>
       </div>
