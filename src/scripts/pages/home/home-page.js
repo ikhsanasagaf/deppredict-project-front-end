@@ -26,17 +26,17 @@ export default class HomePage {
             <div class="col-md-4 mb-4">
               <img src="/healthy.png" alt="Sehat" class="img-fluid mb-3" style="max-height: 100px;">
               <h5 class="fw-bold" style="color: #104f1f;">Akses Mudah</h5>
-              <p>Website dapat diakses kapan saja dan di mana saja tanpa instalasi.</p>
+              <p>Website ini dapat diakses dengan mudah kapan saja dan di mana saja.</p>
             </div>
             <div class="col-md-4 mb-4">
               <img src="/hug.png" alt="Support" class="img-fluid mb-3" style="max-height: 100px;">
               <h5 class="fw-bold" style="color: #104f1f;">Privasi Terjamin</h5>
-              <p>Data yang Anda masukkan tidak disalahgunakan.</p>
+              <p>Data yang Anda masukkan tidak akan disalahgunakan.</p>
             </div>
             <div class="col-md-4 mb-4">
-              <img src="/anxiety.png" alt="Deteksi" class="img-fluid mb-3" style="max-height: 100px;">
+              <img src="/statistics.png" alt="Deteksi" class="img-fluid mb-3" style="max-height: 100px;">
               <h5 class="fw-bold" style="color: #104f1f;">Deteksi Berdasarkan Data</h5>
-              <p>Menggunakan dataset dari Kaggle untuk hasil prediksi yang akurat.</p>
+              <p>Menggunakan data riset terpercaya untuk hasil prediksi yang akurat.</p>
             </div>
           </div>
         </div>
