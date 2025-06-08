@@ -1,4 +1,6 @@
 import LoginPresenter from "./login-presenter.js";
+import DepPredictAPI from "../../../data/deppredict-api.js";
+import AuthTokenManager from "../../../utils/auth-token-manager.js";
 import Swal from "sweetalert2";
 import "../../../../styles/auth.css";
 
@@ -43,6 +45,8 @@ export default class LoginPage {
   async afterRender() {
     this.#presenter = new LoginPresenter({
       view: this,
+      model: DepPredictAPI,
+      authModel: AuthTokenManager,
     });
     this.#setupForm();
   }

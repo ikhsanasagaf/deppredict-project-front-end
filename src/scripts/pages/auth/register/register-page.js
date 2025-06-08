@@ -1,4 +1,5 @@
 import RegisterPresenter from "./register-presenter.js";
+import DepPredictAPI from "../../../data/deppredict-api.js";
 import Swal from "sweetalert2";
 import "../../../../styles/auth.css";
 
@@ -49,7 +50,7 @@ export default class RegisterPage {
   async afterRender() {
     this.#presenter = new RegisterPresenter({
       view: this,
-      // model: StoriesAPI, // Anda bisa uncomment ini jika sudah punya file API
+      model: DepPredictAPI,
     });
     this.#setupForm();
   }

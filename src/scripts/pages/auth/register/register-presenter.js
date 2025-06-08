@@ -8,7 +8,6 @@ export default class RegisterPresenter {
   }
 
   async getRegistered({ name, email, password }) {
-    // Validasi sederhana
     if (!name || !email || !password) {
       this.#view.registeredFailed(
         "Nama, email, dan password tidak boleh kosong."
@@ -17,21 +16,13 @@ export default class RegisterPresenter {
     }
 
     this.#view.showSubmitLoadingButton();
-    console.log("Mencoba mendaftar dengan:", { name, email, password });
-
-    // --- Simulasi Panggilan API ---
-    setTimeout(() => {
-      try {
-        // Simulasi berhasil
-        this.#view.registeredSuccessfully(
-          "Akun Anda berhasil dibuat. Silakan login."
-        );
-      } catch (error) {
-        // Simulasi gagal
-        this.#view.registeredFailed(error.message);
-      } finally {
-        this.#view.hideSubmitLoadingButton();
-      }
-    }, 1500); // delay 1.5 detik
+    try {
+      const response = await this.#model.register({ name, email, password });
+      this.#view.registeredSuccessfully(response.message);
+    } catch (error) {
+      this.#view.registeredFailed(error.message);
+    } finally {
+      this.#view.hideSubmitLoadingButton();
+    }
   }
 }
