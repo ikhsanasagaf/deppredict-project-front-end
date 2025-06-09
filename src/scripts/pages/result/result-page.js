@@ -67,7 +67,7 @@ class ResultPage {
             </div>`
           }
 
-          <a href="#/predict" class="btn btn-dark fw-bold mt-4">Kembali ke Home</a>
+          <a href="#/" class="btn btn-dark fw-bold mt-4">Kembali ke Home</a>
         </div>
       </div>
     `;
