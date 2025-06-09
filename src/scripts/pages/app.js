@@ -3,6 +3,7 @@ import { getActiveRoute, getActivePathname } from "../routes/url-parser";
 import AuthTokenManager from "../utils/auth-token-manager";
 import NavbarAuth from "../components/navbar-auth";
 import Swal from "sweetalert2";
+import { Collapse } from 'bootstrap'
 
 class App {
   #content = null;
@@ -60,8 +61,7 @@ class App {
 
       const navbarCollapseEl = document.getElementById("navbarNavAltMarkup");
       if (navbarCollapseEl && navbarCollapseEl.classList.contains("show")) {
-        const bsCollapse =
-          bootstrap.Collapse.getOrCreateInstance(navbarCollapseEl);
+        const bsCollapse = Collapse.getOrCreateInstance(navbarCollapseEl);
         bsCollapse.hide();
       }
     } catch (error) {
@@ -95,8 +95,8 @@ class App {
       text: "Anda akan keluar dari sesi ini.",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "#388529",
+      cancelButtonColor: "#ba1a27",
       confirmButtonText: "Ya, logout!",
       cancelButtonText: "Batal",
     }).then((result) => {

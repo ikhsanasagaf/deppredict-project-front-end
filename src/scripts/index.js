@@ -6,24 +6,29 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../styles/styles.css";
 
 import App from "./pages/app";
+import swRegister from "./utils/sw-register";
 
-document.addEventListener("DOMContentLoaded", async () => {
+window.addEventListener("load", async () => {
   const app = new App({
     content: document.querySelector("#main-content"),
     authButtonContainer: document.querySelector("#auth-button-container"),
   });
 
-  const initialRender = async () => {
+  window.addEventListener("hashchange", async () => {
     await app.renderPage();
+  });
+
+  
+  try {
+    await app.renderPage();
+  } catch (error) {
+    console.error("Gagal merender halaman awal:", error);
+  } finally {
     const loader = document.querySelector(".bg-loader");
     if (loader) {
       loader.style.display = "none";
     }
-  };
-
-  window.addEventListener("load", initialRender);
-
-  window.addEventListener("hashchange", async () => {
-    await app.renderPage();
-  });
+  }
+  
+  await swRegister();
 });

@@ -1,0 +1,102 @@
+{
+  "id": "/?source=pwa#/",
+  "scope": "/",
+  "start_url": "/?source=pwa#/",
+  "name": "DepPredict - Deteksi Depresi Dini",
+  "short_name": "DepPredict",
+  "description": "Aplikasi untuk membantu deteksi dini gejala depresi.",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#ebf5ec",
+  "icons": [
+    {
+      "src": "images/icons/icon-x144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icons/maskable-icon-x48.png",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "maskable"
+    },
+    {
+      "src": "images/icons/maskable-icon-x96.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "maskable"
+    },
+    {
+      "src": "images/icons/maskable-icon-x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "images/icons/maskable-icon-x384.png",
+      "type": "image/png",
+      "sizes": "384x384",
+      "purpose": "maskable"
+    },
+    {
+      "src": "images/icons/maskable-icon-x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/screenshots/deppredict_001.png",
+      "sizes": "2880x1284",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/deppredict_002.png",
+      "sizes": "2880x1284",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/deppredict_003.png",
+      "sizes": "2880x1284",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "images/screenshots/deppredict_004.png",
+      "sizes": "850x1284",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "images/screenshots/deppredict_005.png",
+      "sizes": "850x1284",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "images/screenshots/deppredict_006.png",
+      "sizes": "850x1284",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Predict Depression",
+      "short_name": "Predict",
+      "description": "Predict the status of depression based on your input.",
+      "url": "/?source=pwa#/predict",
+      "icons": [
+        {
+          "src": "images/icons/predictive-analysis.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ]
+    }
+  ]
+}
