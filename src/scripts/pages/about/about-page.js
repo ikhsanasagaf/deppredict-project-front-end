@@ -119,7 +119,7 @@ class AboutPage {
             <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
             <div class="card team-card text-center border-0 shadow-sm h-100 w-100">
                 <div class="card-body d-flex flex-column">
-                <img src="/avatar=tasya.png" alt="Tasya Panggabean" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
+                <img src="/avatar-tasya.png" alt="Tasya Panggabean" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
                 <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Tasya Panggabean</h5>
                 <p class="text-muted small mb-3">Machine Learning</p>
                 <div class="mt-auto">
