@@ -91,12 +91,12 @@ class AboutPage {
             <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
             <div class="card team-card text-center border-0 shadow-sm h-100 w-100">
                 <div class="card-body d-flex flex-column">
-                <img src="/avatar1.png" alt="Sofyan Pahlevi" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
+                <img src="/avatar-sofyan.jpg" alt="Sofyan Pahlevi" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
                 <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Sofyan Pahlevi</h5>
                 <p class="text-muted small mb-3">Machine Learning</p>
                 <div class="mt-auto">
-                    <a href="#" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
-                    <a href="#" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/SofyanSaif" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
+                    <a href="http://www.linkedin.com/in/sofyansaif2214006" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
                 </div>
                 </div>
             </div>
@@ -109,8 +109,8 @@ class AboutPage {
                 <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Satria Dirgantara</h5>
                 <p class="text-muted small mb-3">Machine Learning</p>
                 <div class="mt-auto">
-                    <a href="#" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
-                    <a href="#" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/BagasNuryaman15" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
+                    <a href="http://www.linkedin.com/in/satriadirgantaranuryaman" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
                 </div>
                 </div>
             </div>
@@ -119,12 +119,12 @@ class AboutPage {
             <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
             <div class="card team-card text-center border-0 shadow-sm h-100 w-100">
                 <div class="card-body d-flex flex-column">
-                <img src="/avatar3.png" alt="Tasya Panggabean" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
+                <img src="/avatar=tasya.png" alt="Tasya Panggabean" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
                 <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Tasya Panggabean</h5>
                 <p class="text-muted small mb-3">Machine Learning</p>
                 <div class="mt-auto">
-                    <a href="#" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
-                    <a href="#" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Tasyaya" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/tasya-panggabean-247a6a351/" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
                 </div>
                 </div>
             </div>
@@ -149,12 +149,12 @@ class AboutPage {
             <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
             <div class="card team-card text-center border-0 shadow-sm h-100 w-100">
                 <div class="card-body d-flex flex-column">
-                <img src="/avatar2.png" alt="Lay Victor Adrian" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
+                <img src="avatar-victor.png" alt="Lay Victor Adrian" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
                 <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Lay Victor Adrian</h5>
                 <p class="text-muted small mb-3">Front-end & Back-End Developer</p>
                 <div class="mt-auto">
-                    <a href="#" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
-                    <a href="#" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Vicganz04" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/lay-victor-adrian-294a66333/" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -163,12 +163,12 @@ class AboutPage {
             <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
             <div class="card team-card text-center border-0 shadow-sm h-100 w-100">
                 <div class="card-body d-flex flex-column">
-                    <img src="/avatar3.png" alt="Y Noven Dhimas Nugroho" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
+                    <img src="/avatar-noven.jpg" alt="Y Noven Dhimas Nugroho" class="rounded-circle img-fluid mx-auto mb-3 shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #6ebe77;">
                     <h5 class="card-title fw-bold mb-1" style="color: #104f1f;">Y Noven Dhimas Nugroho</h5>
                     <p class="text-muted small mb-3">Front-end & Back-End Developer</p>
                     <div class="mt-auto">
-                        <a href="#" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
-                        <a href="#" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/venadd" class="text-decoration-none me-2" style="color: #104f1f;"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/y-noven-dhimas-nugroho/" class="text-decoration-none me-2" style="color: #007bff;"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
