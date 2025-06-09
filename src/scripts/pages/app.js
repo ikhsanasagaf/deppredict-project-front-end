@@ -36,6 +36,7 @@ class App {
         title: "Akses Ditolak",
         text: "Anda harus login terlebih dahulu untuk mengakses halaman ini.",
         icon: "warning",
+        confirmButtonColor: "#388529",
         confirmButtonText: "Login Sekarang",
       }).then(() => {
         window.location.hash = "#/login";
