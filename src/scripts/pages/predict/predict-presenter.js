@@ -48,6 +48,7 @@ class PredictPresenter {
       const dataForStorage = Object.fromEntries(formData.entries());
       
       const features = [
+        0,
         Number(formData.get('age')),              
         Number(formData.get('ap')),                
         0,                                        
