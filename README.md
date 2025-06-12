@@ -39,7 +39,7 @@ Untuk menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-langkah ber
 
 1.  **Prasyarat**
     -   Node.js (v18 atau lebih baru)
-    -   NPM (biasanya sudah terinstal bersama Node.js)
+    -   NPM
 
 2.  **Clone Repositori**
     ```bash
