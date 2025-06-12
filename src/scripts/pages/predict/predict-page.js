@@ -1,4 +1,4 @@
-import PredictPresenter from "./predict-presenter";
+import PredictPresenter from './predict-presenter';
 
 class PredictPage {
   constructor() {
@@ -7,25 +7,39 @@ class PredictPage {
 
   async render() {
     return `
-      <div id="predict-page-content-area" class="container my-5"></div>
+      <div id="predict-page-content-area" class="container my-5">
+        <div id="loader-container" class="text-center py-5">
+          <p>Memuat model prediksi, mohon tunggu...</p>
+          <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <div id="form-container" style="display: none;"></div>
+      </div>
     `;
   }
 
   async afterRender() {
-    const predictContentAreaElement = document.querySelector(
-      "#predict-page-content-area"
-    );
-    if (!predictContentAreaElement) {
-      console.error("Elemen #predict-page-content-area tidak ditemukan!");
-      return;
+    this._presenter = new PredictPresenter({ view: this });
+    await this._presenter.init();
+  }
+
+  showLoading() {
+    document.querySelector('#loader-container').style.display = 'block';
+    document.querySelector('#form-container').style.display = 'none';
+  }
+
+  hideLoading() {
+    document.querySelector('#loader-container').style.display = 'none';
+    document.querySelector('#form-container').style.display = 'block';
+  }
+
+  renderForm() {
+    const formContainer = document.querySelector('#form-container');
+    if (formContainer) {
+      formContainer.innerHTML = this._getFormTemplate();
+      this._presenter.setupFormListener();
     }
-
-    this._presenter = new PredictPresenter({
-      view: this,
-      container: predictContentAreaElement,
-    });
-
-    await this._presenter.showForm();
   }
 
   _getFormTemplate() {
@@ -33,9 +47,7 @@ class PredictPage {
       <div class="card col-md-10 mx-auto" id="pred">
         <div class="card-body p-4">
             <h5 class="mb-0 mt-2 fw-bold" style="color:#104f1f;">Form Prediksi Status Depresi</h5><hr>
-            <p>
-                Silahkan isi formulir dibawah. Data kamu tidak akan disebarluaskan, jadi tolong isi dengan jujur ya!
-            </p>
+            <p>Silahkan isi formulir dibawah. Data Anda akan diproses secara lokal di browser ini dan tidak akan dikirim kemanapun.</p>
             <form id="prediction-form">
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
@@ -62,7 +74,7 @@ class PredictPage {
                     </div>
                     <div class="col-md-6">
                         <label for="cgpa" class="form-label">IPK Sekarang</label>
-                        <input type="text" class="form-control" id="cgpa" name="cgpa" placeholder="Contoh: 3.75" required>
+                        <input type="number" step="0.01" class="form-control" id="cgpa" name="cgpa" placeholder="Contoh: 3.75" required>
                     </div>
                 </div>
                 <div class="row mb-4">
@@ -106,7 +118,7 @@ class PredictPage {
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 mb-3 mb-md-0">
-                        <label for="fam" class="form-label">Apakah ada keluarga kamu yang memiliki penyakit mental?</label>
+                        <label for="fam" class="form-label">Riwayat Penyakit Mental Keluarga?</label>
                         <select class="form-select" id="fam" name="fam" required>
                             <option selected disabled value="">Pilih Ya/Tidak</option>
                             <option value="1">Ya</option>
@@ -114,7 +126,7 @@ class PredictPage {
                         </select>
                     </div>
                     <div class="col-12 col-md-6">
-                        <label for="sui" class="form-label">Pernahkah kamu memiliki keinginan bunuh diri?</label>
+                        <label for="sui" class="form-label">Pernah memiliki keinginan bunuh diri?</label>
                         <select class="form-select" id="sui" name="sui" required>
                             <option selected disabled value="">Pilih Ya/Tidak</option>
                             <option value="1">Ya</option>
@@ -123,28 +135,13 @@ class PredictPage {
                     </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-4">
-                    <button type="submit" name="hitung" class="btn btn-success fw-bold">
-                        <i class="fa-solid fa-laptop-medical" style="margin-right:10px;"></i>Prediksi
-                    </button>
-                    <a href="#/" class="btn btn-success" style="font-weight:600;"><i class="fa-solid fa-arrow-left" style="margin-right:6px;"></i>
-                        Kembali
-                    </a>
+                    <button type="submit" name="hitung" class="btn btn-success fw-bold">Prediksi</button>
+                    <a href="#/" class="btn btn-outline-secondary fw-bold">Kembali</a>
                 </div>
             </form>
         </div>
       </div>
-      <div id="prediction-result" class="mt-4"></div>
     `;
-  }
-
-  displayForm(containerElement) {
-    if (containerElement) {
-      containerElement.innerHTML = this._getFormTemplate();
-    } else {
-      console.error(
-        "Container element untuk PredictPage tidak ditemukan oleh View."
-      );
-    }
   }
 }
 

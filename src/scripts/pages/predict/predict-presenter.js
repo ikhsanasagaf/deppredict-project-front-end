@@ -1,38 +1,93 @@
+import * as tf from '@tensorflow/tfjs';
+import Swal from 'sweetalert2';
+
 class PredictPresenter {
-  constructor({ view, container }) {
-    this._view = view;
-    this._container = container;
+  #view = null;
+  #model = null;
+  #scalerParams = null;
+
+  constructor({ view }) {
+    this.#view = view;
   }
 
-  async showForm() {
-    this._view.displayForm(this._container);
-    this._addFormSubmitListener();
+  async init() {
+    this.#view.showLoading();
+    try {
+      [this.#model, this.#scalerParams] = await Promise.all([
+        tf.loadLayersModel('/model_web/model.json'),
+        fetch('/scaler_params.json').then(res => res.json())
+      ]);
+      console.log('Model dan scaler berhasil dimuat.');
+      this.#view.renderForm();
+    } catch (error) {
+      console.error('Gagal memuat model:', error);
+      Swal.fire('Error', 'Gagal memuat model prediksi. Coba muat ulang halaman.', 'error');
+    } finally {
+      this.#view.hideLoading();
+    }
   }
 
-  _addFormSubmitListener() {
-    const form = document.getElementById("prediction-form");
+  setupFormListener() {
+    const form = document.getElementById('prediction-form');
     if (form) {
-      form.addEventListener("submit", (event) => {
+      form.addEventListener('submit', (event) => {
         event.preventDefault();
-        this._handleFormSubmit(form);
+        this._handlePrediction(form);
       });
     }
   }
 
-  _handleFormSubmit(formElement) {
-    const formData = new FormData(formElement);
-    const data = Object.fromEntries(formData.entries());
+  _handlePrediction(formElement) {
+    if (!this.#model || !this.#scalerParams) {
+      Swal.fire('Error', 'Model belum siap. Mohon tunggu.', 'error');
+      return;
+    }
 
-    // Simulasi hasil prediksi dari model (random 0 atau 1)
-    data.prediction = Math.round(Math.random());
+    try {
+      const formData = new FormData(formElement);
+      const dataForStorage = Object.fromEntries(formData.entries());
+      
+      const features = [
+        Number(formData.get('age')),              
+        Number(formData.get('ap')),                
+        0,                                        
+        Number(formData.get('cgpa')),              
+        Number(formData.get('ss')),                
+        0,                                       
+        Number(formData.get('sd')),                
+        Number(formData.get('dh')),               
+        Number(formData.get('sui')),               
+        Number(formData.get('sh')),                
+        Number(formData.get('fs')),              
+        Number(formData.get('fam')),               
+      ];
 
-    console.log("Prediction Data to be stored:", data);
+  
+      if (features.some(isNaN)) {
+        throw new Error('Pastikan semua field terisi dengan benar.');
+      }
 
-    // Simpan data ke sessionStorage untuk diambil oleh halaman hasil
-    sessionStorage.setItem("predictionData", JSON.stringify(data));
+      const scaledFeatures = features.map((feature, index) => 
+        (feature - this.#scalerParams.mean[index]) / this.#scalerParams.scale[index]
+      );
+      
+      const inputTensor = tf.tensor2d([scaledFeatures]);
+      const predictionTensor = this.#model.predict(inputTensor);
+      const predictionResult = predictionTensor.dataSync()[0] > 0.5 ? 1 : 0;
 
-    // Arahkan ke halaman hasil
-    window.location.hash = "#/result";
+      inputTensor.dispose();
+      predictionTensor.dispose();
+      
+      dataForStorage.prediction = predictionResult;
+
+      sessionStorage.setItem('predictionData', JSON.stringify(dataForStorage));
+
+      window.location.hash = '#/result';
+
+    } catch (error) {
+      console.error("Error saat prediksi:", error);
+      Swal.fire('Error', `Terjadi kesalahan saat melakukan prediksi: ${error.message}`, 'error');
+    }
   }
 }
 
