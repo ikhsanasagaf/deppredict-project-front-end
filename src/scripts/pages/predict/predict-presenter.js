@@ -12,6 +12,13 @@ class PredictPresenter {
 
   async init() {
     this.#view.showLoading();
+    console.log('Fetching:', '/model_web/model.json');
+    try {
+      const m = await tf.loadLayersModel('/model_web/model.json');
+      console.log('Success:', m);
+    } catch(e) {
+      console.error('Gagal memuat model:', e);
+    }
     try {
       [this.#model, this.#scalerParams] = await Promise.all([
         tf.loadLayersModel('/model_web/model.json'),
