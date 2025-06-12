@@ -43,7 +43,7 @@ Untuk menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-langkah ber
 
 2.  **Clone Repositori**
     ```bash
-    git clone [https://github.com/ikhsanasagaf/deppredict-project-front-end.git](https://github.com/ikhsanasagaf/deppredict-project-front-end.git)
+    git clone https://github.com/ikhsanasagaf/deppredict-project-front-end.git
     ```
 
 3.  **Masuk ke Direktori Proyek**
