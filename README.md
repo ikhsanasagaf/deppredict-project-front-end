@@ -1,6 +1,6 @@
 # DepPredict - Aplikasi Web Prediksi Depresi Dini
 
-![Screenshot DepPredict](https://i.imgur.com/gK2JdJj.png)
+![Screenshot DepPredict](https://imgur.com/a/daoxpfX)
 
 **DepPredict** adalah sebuah Progressive Web App (PWA) yang dirancang untuk membantu pengguna, khususnya mahasiswa, dalam melakukan deteksi dini terhadap gejala depresi. Aplikasi ini menyediakan formulir interaktif berdasarkan kriteria-kriteria yang terbukti secara ilmiah, dan memberikan hasil prediksi secara langsung di browser pengguna untuk menjaga privasi dan kecepatan.
 
