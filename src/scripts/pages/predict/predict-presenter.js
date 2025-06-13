@@ -55,7 +55,7 @@ class PredictPresenter {
       const predictionResult = await this._model.getPrediction({ features });
 
       // Gabungkan hasil prediksi dengan data form
-      dataForStorage.prediction = predictionResult.data.prediction;
+      dataForStorage.prediction = predictionResult.prediction;
 
       sessionStorage.setItem('predictionData', JSON.stringify(dataForStorage));
       
