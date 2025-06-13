@@ -1,30 +1,9 @@
-import * as tf from '@tensorflow/tfjs';
 import Swal from 'sweetalert2';
 
 class PredictPresenter {
-  #view = null;
-  #model = null;
-  #scalerParams = null;
-
-  constructor({ view }) {
-    this.#view = view;
-  }
-
-  async init() {
-    this.#view.showLoading();
-    try {
-      [this.#model, this.#scalerParams] = await Promise.all([
-        tf.loadLayersModel('/model_web/model.json'),
-        fetch('/scaler_params.json').then(res => res.json())
-      ]);
-      console.log('Model dan scaler berhasil dimuat.');
-      this.#view.renderForm();
-    } catch (error) {
-      console.error('Gagal memuat model:', error);
-      Swal.fire('Error', 'Gagal memuat model prediksi. Coba muat ulang halaman.', 'error');
-    } finally {
-      this.#view.hideLoading();
-    }
+  constructor({ view, model }) {
+    this._view = view;
+    this._model = model;
   }
 
   setupFormListener() {
@@ -37,57 +16,54 @@ class PredictPresenter {
     }
   }
 
-  _handlePrediction(formElement) {
-    if (!this.#model || !this.#scalerParams) {
-      Swal.fire('Error', 'Model belum siap. Mohon tunggu.', 'error');
-      return;
-    }
+  async _handlePrediction(formElement) {
+    Swal.fire({
+      title: 'Memproses Prediksi...',
+      text: 'Mohon tunggu sebentar.',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+    });
 
     try {
       const formData = new FormData(formElement);
       const dataForStorage = Object.fromEntries(formData.entries());
-      
+
+      // Susun fitur sesuai urutan yang diminta model
       const features = [
-        0,
-        Number(formData.get('age')),              
-        Number(formData.get('ap')),                
-        0,                                        
-        Number(formData.get('cgpa')),              
-        Number(formData.get('ss')),                
-        0,                                       
-        Number(formData.get('sd')),                
-        Number(formData.get('dh')),               
-        Number(formData.get('sui')),               
-        Number(formData.get('sh')),                
-        Number(formData.get('fs')),              
-        Number(formData.get('fam')),               
+        0,                                         // 0. Id (diisi 0 karena tidak digunakan)
+        Number(formData.get('age')),               // 1. Age
+        Number(formData.get('ap')),                // 2. Academic Pressure
+        0,                                         // 3. Work Pressure (diisi 0 karena tidak digunakan)
+        Number(formData.get('cgpa')),              // 4. CGPA
+        Number(formData.get('ss')),                // 5. Study Satisfaction
+        0,                                         // 6. Job Satisfaction (diisi 0 karena tidak digunakan)
+        Number(formData.get('sd')),                // 7. Sleep Duration
+        Number(formData.get('dh')),                // 8. Dietary Habits
+        Number(formData.get('sui')),               // 9. Suicidal thoughts
+        Number(formData.get('sh')),                // 10. Work/Study Hours
+        Number(formData.get('fs')),                // 11. Financial Stress
+        Number(formData.get('fam')),               // 12. Family History
       ];
 
-  
       if (features.some(isNaN)) {
         throw new Error('Pastikan semua field terisi dengan benar.');
       }
-
-      const scaledFeatures = features.map((feature, index) => 
-        (feature - this.#scalerParams.mean[index]) / this.#scalerParams.scale[index]
-      );
       
-      const inputTensor = tf.tensor2d([scaledFeatures]);
-      const predictionTensor = this.#model.predict(inputTensor);
-      const predictionResult = predictionTensor.dataSync()[0] > 0.5 ? 1 : 0;
+      // Panggil API back-end untuk mendapatkan prediksi
+      const predictionResult = await this._model.getPrediction({ features });
 
-      inputTensor.dispose();
-      predictionTensor.dispose();
-      
-      dataForStorage.prediction = predictionResult;
+      // Gabungkan hasil prediksi dengan data form
+      dataForStorage.prediction = predictionResult.data.prediction;
 
       sessionStorage.setItem('predictionData', JSON.stringify(dataForStorage));
-
+      
+      Swal.close();
       window.location.hash = '#/result';
 
     } catch (error) {
-      console.error("Error saat prediksi:", error);
-      Swal.fire('Error', `Terjadi kesalahan saat melakukan prediksi: ${error.message}`, 'error');
+      Swal.fire('Error', `Terjadi kesalahan: ${error.message}`, 'error');
     }
   }
 }

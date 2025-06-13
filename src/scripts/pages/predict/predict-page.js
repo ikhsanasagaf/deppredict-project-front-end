@@ -1,4 +1,5 @@
 import PredictPresenter from './predict-presenter';
+import DepPredictAPI from '../../data/deppredict-api';
 
 class PredictPage {
   constructor() {
@@ -8,38 +9,17 @@ class PredictPage {
   async render() {
     return `
       <div id="predict-page-content-area" class="container my-5">
-        <div id="loader-container" class="text-center py-5">
-          <p>Memuat model prediksi, mohon tunggu...</p>
-          <div class="spinner-border text-success" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-        </div>
-        <div id="form-container" style="display: none;"></div>
+        ${this._getFormTemplate()}
       </div>
     `;
   }
 
   async afterRender() {
-    this._presenter = new PredictPresenter({ view: this });
-    await this._presenter.init();
-  }
-
-  showLoading() {
-    document.querySelector('#loader-container').style.display = 'block';
-    document.querySelector('#form-container').style.display = 'none';
-  }
-
-  hideLoading() {
-    document.querySelector('#loader-container').style.display = 'none';
-    document.querySelector('#form-container').style.display = 'block';
-  }
-
-  renderForm() {
-    const formContainer = document.querySelector('#form-container');
-    if (formContainer) {
-      formContainer.innerHTML = this._getFormTemplate();
-      this._presenter.setupFormListener();
-    }
+    this._presenter = new PredictPresenter({
+      view: this,
+      model: DepPredictAPI,
+    });
+    this._presenter.setupFormListener();
   }
 
   _getFormTemplate() {
@@ -47,13 +27,15 @@ class PredictPage {
       <div class="card col-md-10 mx-auto" id="pred">
         <div class="card-body p-4">
             <h5 class="mb-0 mt-2 fw-bold" style="color:#104f1f;">Form Prediksi Status Depresi</h5><hr>
-            <p>Silahkan isi formulir dibawah. Data Anda akan diproses secara lokal di browser ini dan tidak akan dikirim kemanapun.</p>
+            <p>Silahkan isi formulir dibawah. Data Anda akan dikirim secara aman ke server kami untuk diproses.</p>
             <form id="prediction-form">
+                <!-- Semua input form Anda di sini -->
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" required>
                 </div>
-                <div class="row mb-3">
+                <!-- ... sisa input form Anda ... -->
+                 <div class="row mb-3">
                     <div class="col-md-6 mb-3 mb-md-0">
                         <label for="age" class="form-label">Umur</label>
                         <input type="number" class="form-control" id="age" name="age" placeholder="Masukkan Umur" required>
@@ -134,6 +116,7 @@ class PredictPage {
                         </select>
                     </div>
                 </div>
+
                 <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-4">
                     <button type="submit" name="hitung" class="btn btn-success fw-bold">Prediksi</button>
                     <a href="#/" class="btn btn-outline-secondary fw-bold">Kembali</a>
