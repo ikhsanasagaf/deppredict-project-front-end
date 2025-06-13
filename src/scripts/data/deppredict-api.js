@@ -3,7 +3,7 @@ import CONFIG from "../config";
 const API_ENDPOINT = {
   REGISTER: `${CONFIG.BASE_URL}users`,
   LOGIN: `${CONFIG.BASE_URL}login`,
-  PREDICT: `${CONFIG.BASE_URL_PREDICT}predict`,
+  PREDICT: `${CONFIG.BASE_URL_PREDICT}`,
 };
 
 class DepPredictAPI {
