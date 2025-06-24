@@ -32,19 +32,17 @@ class PredictPresenter {
 
       // Susun fitur sesuai urutan yang diminta model
       const features = [
-        0,                                         // 0. Id (diisi 0 karena tidak digunakan)
+        Number(formData.get('gender')),            // 0. Gender
         Number(formData.get('age')),               // 1. Age
         Number(formData.get('ap')),                // 2. Academic Pressure
-        0,                                         // 3. Work Pressure (diisi 0 karena tidak digunakan)
-        Number(formData.get('cgpa')),              // 4. CGPA
-        Number(formData.get('ss')),                // 5. Study Satisfaction
-        0,                                         // 6. Job Satisfaction (diisi 0 karena tidak digunakan)
-        Number(formData.get('sd')),                // 7. Sleep Duration
-        Number(formData.get('dh')),                // 8. Dietary Habits
-        Number(formData.get('sui')),               // 9. Suicidal thoughts
-        Number(formData.get('sh')),                // 10. Work/Study Hours
-        Number(formData.get('fs')),                // 11. Financial Stress
-        Number(formData.get('fam')),               // 12. Family History
+        Number(formData.get('cgpa')),              // 3. CGPA
+        Number(formData.get('ss')),                // 4. Study Satisfaction
+        Number(formData.get('sd')),                // 5. Sleep Duration
+        Number(formData.get('dh')),                // 6. Dietary Habits
+        Number(formData.get('sui')),               // 7. Suicidal thoughts
+        Number(formData.get('sh')),                // 8. Work/Study Hours
+        Number(formData.get('fs')),                // 9. Financial Stress
+        Number(formData.get('fam')),               // 10. Family History
       ];
 
       if (features.some(isNaN)) {
